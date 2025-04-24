@@ -1,0 +1,11 @@
+.brand-color-fg {
+    color: #00009c !important;
+}
+
+.brand-color-bg {
+    background-color: #00009c !important;
+}
+
+.nav-link.active {
+    color: white !important;
+}

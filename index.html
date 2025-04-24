@@ -2,10 +2,11 @@
 <html lang="es">
 
 <head>
-  <title>Title</title>
+  <title>LOLIMPIO</title>
   <!-- Required meta tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" type="image/x-icon" href="resources/images/favicon.png" />
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
@@ -14,6 +15,21 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="src/css/styles.css" />
 </head>
+
+<script>
+  onload = () => {
+    document.getElementById('btnSwitch').addEventListener('click', () => {
+      if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+        document.getElementById('btnSwitch').innerHTML = '<i class="fa-solid fa-moon fa-xl"></i>';
+      }
+      else {
+        document.documentElement.setAttribute('data-bs-theme', 'dark');
+        document.getElementById('btnSwitch').innerHTML = '<i class="fa-solid fa-sun fa-xl"></i>';
+      }
+    })
+  }
+</script>
 
 <body>
 
@@ -34,6 +50,7 @@
             <li class="nav-item"><a href="#servicios" class="nav-link">Servicios</a></li>
             <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
             <li class="nav-item"><a href="#sobre-nosotros" class="nav-link">Como trabajamos</a></li>
+            <button id="btnSwitch" class="btn"><i class="fa-solid fa-moon fa-xl"></i></button>
           </ul>
         </div>
       </div>
@@ -49,22 +66,31 @@
           <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3"><span class="badge text-bg-primary">LOLIMPIO</span>
             Valencia</h1>
           <p class="display-5">La limpieza tecnológica</p>
-          <div id="whatsapp" class="mb-3">
-            <a aria-label="Chat on WhatsApp" href="https://wa.me/624168495"><img alt="Chat on WhatsApp"
-                src="resources/images/WhatsAppButtonGreenSmall.png" /></a>
-          </div>
-          <div id="email" class="mb-3">
-            <a aria-label="Enviar correo" href="mailto:lolimpiovalencia@gmail.com"
-              class="badge text-bg-primary text-decoration-none">
-              <h2 class="fw-bold my-2 fs-4"><i class="fa-solid fa-envelope"></i> lolimpiovalencia@gmail.com</h2>
-            </a>
+          <div id="contacos">
+            <div class="fw-bold mb-0 fs-4 row row-cols-1 row-cols-sm-3 px-5">
+              <a aria-label="Facebook" alt="Facebook" target="_blank" class="text-decoration-none my-2" title="Facebook"
+                href="https://www.facebook.com/people/Lolimpio-Valencia/pfbid029jdTrtNnrQUTbR3h2AUu69pw8i7AZ3neRufjaSSMMhjKUZByXRMSZf3jqBMwAT6bl/">
+                <i class="fa-brands fa-facebook fa-2xl"></i>
+              </a>
+
+              <a aria-label="Chat on WhatsApp" href="https://wa.me/624168495" target="_blank"
+                title="Chatear en WhatsApp" class="text-decoration-none my-2">
+                <i class="fa-brands fa-whatsapp fa-2xl text-success"></i>
+              </a>
+
+              <a aria-label="Enviar correo" href="mailto:lolimpiovalencia@gmail.com" target="_blank"
+                title="Enviar correo" class="text-decoration-none my-2">
+                <i class="fa-solid fa-envelope fa-2xl"></i>
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="text-center col-xl-6">
           <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">¿Tienes una emergencia?</h1>
           <p class="display-5">¡Llamanos al
-            <span class="badge border border-3 border-primary"><a class="text-decoration-none" href="tel:624168495">624
+            <span class="badge border border-3 border-primary"><a class="text-decoration-none" href="tel:624168495"
+                title="Llamar">624
                 16 84 95</a></span> y te ayudaremos!
           </p>
           <p class="lead">Lunes a Viernes de 8:00 a 18:00 </p>
@@ -109,7 +135,7 @@
           <i class="fa-solid fa-house-user fa-2xl text-primary"></i>
           <div class="mt-2">
             <h2 class="fw-bold mb-0 fs-4 text-body-emphasis">Pisos turísticos</h2>
-            <p class="text-body-secondary">Con un equipo de dos personas y maquinaria de gran potencia para garantizar
+            <p class="text-body-secondary">Equipo de dos personas y maquinaria de gran potencia para garantizar
               una rápida y eficiente limpieza.</p>
           </div>
         </div>
@@ -118,7 +144,7 @@
           <i class="fa-solid fa-house-fire fa-2xl text-primary"></i>
           <div class="mt-2">
             <h2 class="fw-bold mb-0 fs-4 text-body-emphasis">Incendios</h2>
-            <p class="text-body-secondary">Efectiva retirada del hollín para comenzar a devolverle a tu casa el aspecto
+            <p class="text-body-secondary">Efectiva retirada del hollín para devolverle a tu casa el aspecto
               que tenía.</p>
           </div>
         </div>

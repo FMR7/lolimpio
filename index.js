@@ -44,7 +44,7 @@ app.post('/api/contacto', (req, res) => {
 
   const fecha = new Date().toISOString();
   const stmt = db.prepare('INSERT INTO contactos (nombre, telefono, email, mensaje, fecha) VALUES (?, ?, ?, ?, ?)');
-  stmt.run(nombre, telefono, email, mensaje, fecha);
+  stmt.run(nombre.slice(0, 50), telefono.slice(0, 9), email.slice(0, 80), mensaje.slice(0, 500), fecha);
 
   const mailOptions = {
     from: process.env.EMAIL_USER,

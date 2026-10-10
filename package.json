@@ -29,6 +29,7 @@
     "pm2": "^6.0.5"
   },
   "devDependencies": {
+    "bootstrap": "^5.3.5",
     "clean-css": "^5.3.3",
     "html-minifier-terser": "^7.2.0",
     "purgecss": "^8.0.0"

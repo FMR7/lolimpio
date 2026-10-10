@@ -45,7 +45,7 @@ npm ci --include=dev
 npm run build
 ```
 
-The build writes optimized files to `dist/`, preserving the source tree under `public/`. It minifies the HTML and inline JavaScript, removes unused rules from the app stylesheet, and emits only the Font Awesome glyph rules used by this page. Bootstrap remains a minified CDN dependency. Express compresses eligible responses when the client supports gzip.
+The build writes optimized files to `dist/`, preserving the source tree under `public/`. It minifies the HTML and inline JavaScript, purges unused rules from Bootstrap and the app stylesheet, and emits only the Font Awesome glyph rules used by this page. Above-the-fold CSS is inlined; the remaining purged CSS loads asynchronously. Bootstrap JavaScript remains a minified CDN dependency. Express compresses eligible responses when the client supports gzip.
 
 For a single-server deployment, configure the production `.env`, then remove build-only dependencies and start the app:
 
@@ -58,7 +58,7 @@ Keep the Node process running with your hosting platform's service manager or pr
 
 Persist and back up `db.sqlite` across deployments. Do not place the database on ephemeral storage if contact submissions must be retained. Deploy the `.env` values through the host's secret/environment-variable configuration rather than committing them.
 
-The production page still requests Bootstrap assets from jsDelivr and Font Awesome font files from cdnjs, so the browser needs access to those CDNs.
+The production page still requests Bootstrap JavaScript from jsDelivr and Font Awesome font files from cdnjs, so the browser needs access to those CDNs.
 
 ## Available Commands
 

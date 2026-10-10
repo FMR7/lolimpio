@@ -5,26 +5,34 @@
   <title>LOLIMPIO</title>
   <!-- Required meta tags -->
   <meta charset="UTF-8" />
+  <meta name="description" content="LOLIMPIO Valencia, empresa de limpieza especializada en limpieza de oficinas, comunidades, particulares, pisos turísticos, incendios y servicios especializados a medida." />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="icon" type="image/x-icon" href="resources/images/favicon.png" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" integrity="sha384-77y8nNGW9eYPJKjLxoeFrOIkHDBkRk9yWR1JHddn++xVgG4hAQIyuDbKcPV/Cjh5" crossorigin="anonymous" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" integrity="sha384-5bQWftm2RhZySCFP7cLHM9Q0J7z6ky5sbicvUH56HGBRUDIGyAj52Py3qqJcISlb" crossorigin="anonymous" />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" as="style"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" />
+  </noscript>  
 </head>
 
 <script>
   onload = () => {
     document.getElementById('btnSwitch').addEventListener('click', () => {
-      if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {
-        document.documentElement.setAttribute('data-bs-theme', 'light');
+      if (document.documentElement.dataset.bsTheme === 'dark') {
+        document.documentElement.dataset.bsTheme = 'light';
         document.getElementById('btnSwitch').innerHTML = '<i class="fa-solid fa-moon fa-xl"></i>';
       }
       else {
-        document.documentElement.setAttribute('data-bs-theme', 'dark');
+        document.documentElement.dataset.bsTheme = 'dark';
         document.getElementById('btnSwitch').innerHTML = '<i class="fa-solid fa-sun fa-xl"></i>';
       }
     })
@@ -35,7 +43,7 @@
 
   <header class="d-flex flex-wrap justify-content-center p-3 mb-4 border-bottom bg-body sticky-top">
     <a href="/" class="d-flex align-items-center mx-4 link-body-emphasis text-decoration-none">
-      <img src="resources/images/logoLight.png" alt="" width="100" height="100" />
+      <img src="resources/images/logoLight.webp" alt="LOLIMPIO Valencia" width="100" height="100" />
     </a>
 
     <nav class="navbar navbar-expand-sm">
@@ -240,10 +248,15 @@
       <div class="album py-5 bg-body-primary">
         <div class="container">
 
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="row row-cols-1 row-cols-md-3 g-3">
             <div class="col">
               <div class="card shadow-sm">
-                <img class="bd-placeholder-img card-img-top" src="resources/images/aspirando1.png" alt="">
+                <a href="resources/images/original/aspirando1.avif" data-bs-toggle="modal" data-bs-target="#imageModal"
+                  data-image-title="Limpieza de negocios" data-image-alt="Trabajo de limpieza de negocios"
+                  data-image-width="576" data-image-height="1024">
+                  <img class="bd-placeholder-img card-img-top" src="resources/images/aspirando1.avif"
+                    alt="Trabajo de limpieza de negocios" width="411" height="731">
+                </a>
                 <div class="card-body">
                   <h2 class="fw-bold mb-0 fs-4 text-body-emphasis">Limpieza de negocios</h2>
                 </div>
@@ -251,14 +264,24 @@
             </div>
             <div class="col">
               <div class="card shadow-sm mb-3">
-                <img class="bd-placeholder-img card-img-top" src="resources/images/ducha.png" alt="">
+                <a href="resources/images/original/ducha.avif" data-bs-toggle="modal" data-bs-target="#imageModal"
+                  data-image-title="Limpieza de incendios" data-image-alt="Resultado de limpieza tras un incendio"
+                  data-image-width="1024" data-image-height="734">
+                  <img class="bd-placeholder-img card-img-top" src="resources/images/ducha.avif"
+                    alt="Resultado de limpieza tras un incendio" width="419" height="300">
+                </a>
                 <div class="card-body">
                   <h2 class="fw-bold mb-0 fs-4 text-body-emphasis">Limpieza de incendios</h2>
                 </div>
               </div>
 
               <div class="card shadow-sm">
-                <img class="bd-placeholder-img card-img-top" src="resources/images/sueloExterior.png" alt="">
+                <a href="resources/images/original/sueloExterior.avif" data-bs-toggle="modal" data-bs-target="#imageModal"
+                  data-image-title="Hidrolimpieza" data-image-alt="Trabajo de hidrolimpieza en suelo exterior"
+                  data-image-width="1024" data-image-height="768">
+                  <img class="bd-placeholder-img card-img-top" src="resources/images/sueloExterior.avif"
+                    alt="Trabajo de hidrolimpieza en suelo exterior" width="411" height="308">
+                </a>
                 <div class="card-body">
                   <h2 class="fw-bold mb-0 fs-4 text-body-emphasis">Hidrolimpieza</h2>
                 </div>
@@ -266,7 +289,12 @@
             </div>
             <div class="col">
               <div class="card shadow-sm">
-                <img class="bd-placeholder-img card-img-top" src="resources/images/aspirando2.png" alt="">
+                <a href="resources/images/original/aspirando2.avif" data-bs-toggle="modal" data-bs-target="#imageModal"
+                  data-image-title="Limpieza de negocios" data-image-alt="Trabajo de limpieza de negocios"
+                  data-image-width="576" data-image-height="1024">
+                  <img class="bd-placeholder-img card-img-top" src="resources/images/aspirando2.avif"
+                    alt="Trabajo de limpieza de negocios" width="411" height="731">
+                </a>
                 <div class="card-body">
                   <h2 class="fw-bold mb-0 fs-4 text-body-emphasis">Limpieza de negocios</h2>
                 </div>
@@ -282,12 +310,26 @@
     <p class="text-center text-body-secondary">&copy; 2025 LOLIMPIO S.L. </p>
   </footer>
 
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="imageModalTitle"></h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <img id="fullSizeImage" class="img-fluid d-block mx-auto" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Modal Success -->
-  <div class="modal fade" id="modalSuccess" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modalSuccess" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Información</h1>
+          <h1 class="modal-title fs-5" id="successModalLabel">Información</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -301,11 +343,11 @@
   </div>
 
   <!-- Modal Error -->
-  <div class="modal fade" id="modalError" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modalError" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Error</h1>
+          <h1 class="modal-title fs-5" id="errorModalLabel">Error</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -319,6 +361,16 @@
   </div>
 
   <script>
+    document.getElementById('imageModal').addEventListener('show.bs.modal', (event) => {
+      const trigger = event.relatedTarget;
+      const fullSizeImage = document.getElementById('fullSizeImage');
+      fullSizeImage.width = Number(trigger.dataset.imageWidth);
+      fullSizeImage.height = Number(trigger.dataset.imageHeight);
+      fullSizeImage.src = trigger.href;
+      fullSizeImage.alt = trigger.dataset.imageAlt;
+      document.getElementById('imageModalTitle').textContent = trigger.dataset.imageTitle;
+    });
+
     const form = document.getElementById('formulario');
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -343,7 +395,7 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous" defer></script>
 </body>
 
 </html>

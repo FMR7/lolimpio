@@ -1,9 +1,99 @@
-.brand-color-fg {
-    color: #00009c !important;
+@font-face {
+    font-family: "Font Awesome 6 Brands";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-brands-400.woff2") format("woff2");
 }
 
-.brand-color-bg {
-    background-color: #00009c !important;
+@font-face {
+    font-family: "Font Awesome 6 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-solid-900.woff2") format("woff2");
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.fa-brands,
+.fa-solid {
+    display: inline-block;
+    font-style: normal;
+    line-height: 1;
+}
+
+.fa-brands {
+    font-family: "Font Awesome 6 Brands", sans-serif;
+    font-weight: 400;
+}
+
+.fa-solid {
+    font-family: "Font Awesome 6 Free", sans-serif;
+    font-weight: 900;
+}
+
+.fa-xl {
+    font-size: 1.5em;
+    line-height: .04167em;
+    vertical-align: -.125em;
+}
+
+.fa-2xl {
+    font-size: 2em;
+    line-height: .03125em;
+    vertical-align: -.1875em;
+}
+
+.fa-facebook::before {
+    content: "\f39e";
+}
+
+.fa-whatsapp::before {
+    content: "\f232";
+}
+
+.fa-moon::before {
+    content: "\f186";
+}
+
+.fa-sun::before {
+    content: "\f185";
+}
+
+.fa-envelope::before {
+    content: "\f0e0";
+}
+
+.fa-building::before {
+    content: "\f1ad";
+}
+
+.fa-user-group::before {
+    content: "\f0c0";
+}
+
+.fa-house::before {
+    content: "\f015";
+}
+
+.fa-house-user::before {
+    content: "\e1b0";
+}
+
+.fa-house-fire::before {
+    content: "\e50c";
+}
+
+.fa-calculator::before {
+    content: "\f1ec";
+}
+
+.fa-helmet-safety::before {
+    content: "\f807";
 }
 
 .nav-link.active {

@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const compression = require('compression');
 const path = require('path');
 const Database = require('better-sqlite3');
 const nodemailer = require('nodemailer');
@@ -29,6 +30,7 @@ db.prepare(`
 
 const app = express();
 app.use(cors());
+app.use(compression());
 app.use(express.json());
 
 // Servir archivos estáticos (HTML, CSS, JS)

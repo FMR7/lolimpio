@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const compression = require('compression');
+const fs = require('fs');
 const path = require('path');
 const Database = require('better-sqlite3');
 const nodemailer = require('nodemailer');
@@ -34,7 +35,9 @@ app.use(compression());
 app.use(express.json());
 
 // Servir archivos estáticos (HTML, CSS, JS)
-app.use(express.static(path.join(__dirname, 'public')));
+const buildDir = path.join(__dirname, 'dist');
+const publicDir = fs.existsSync(buildDir) ? buildDir : path.join(__dirname, 'public');
+app.use(express.static(publicDir));
 
 // Ruta para recibir los datos del formulario
 app.post('/api/contacto', (req, res) => {

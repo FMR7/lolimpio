@@ -36,17 +36,27 @@
 </head>
 
 <script>
+  const themeStorageKey = 'lolimpio-theme';
+  const savedTheme = localStorage.getItem(themeStorageKey);
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    document.documentElement.dataset.bsTheme = savedTheme;
+  }
+
   onload = () => {
-    document.getElementById('btnSwitch').addEventListener('click', () => {
-      if (document.documentElement.dataset.bsTheme === 'dark') {
-        document.documentElement.dataset.bsTheme = 'light';
-        document.getElementById('btnSwitch').innerHTML = '<i class="fa-solid fa-moon fa-xl"></i>';
-      }
-      else {
-        document.documentElement.dataset.bsTheme = 'dark';
-        document.getElementById('btnSwitch').innerHTML = '<i class="fa-solid fa-sun fa-xl"></i>';
-      }
-    })
+    const btnSwitch = document.getElementById('btnSwitch');
+    const updateThemeButton = () => {
+      btnSwitch.innerHTML = document.documentElement.dataset.bsTheme === 'dark'
+        ? '<i class="fa-solid fa-sun fa-xl"></i>'
+        : '<i class="fa-solid fa-moon fa-xl"></i>';
+    };
+
+    updateThemeButton();
+    btnSwitch.addEventListener('click', () => {
+      const nextTheme = document.documentElement.dataset.bsTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.bsTheme = nextTheme;
+      localStorage.setItem(themeStorageKey, nextTheme);
+      updateThemeButton();
+    });
   }
 </script>
 

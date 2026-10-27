@@ -22,3 +22,19 @@ img {
 .nav-link.active {
     color: white !important;
 }
+
+.privacy-notice {
+    color: #5c636a;
+}
+
+.privacy-notice a {
+    color: #084298;
+}
+
+[data-bs-theme="dark"] .privacy-notice {
+    color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .privacy-notice a {
+    color: #9ec5fe;
+}
